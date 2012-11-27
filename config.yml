@@ -1,0 +1,731 @@
+commission: 2.0 # the commission (in percent) a shopkeeper earns for a successful order
+
+# item data...format is similar to json
+items:
+   - {active: 1, id: "1", max_price: 3, min_price: 0.09375, name: "Stone", stackSize: 64}
+
+   - {active: 1, id: "2", max_price: 7, min_price: 0.21875, name: "Grass", stackSize: 64}
+
+   - {active: 1, id: "3", max_price: 2, min_price: 0.0625, name: "Dirt", stackSize: 64}
+
+   - {active: 1, id: "4", max_price: 2, min_price: 0.0625, name: "Cobblestone", stackSize: 64}
+
+   - {active: 0, id: "5", max_price: 3, min_price: 0.09375, name: "Oak Wood Planks", stackSize: 64}
+
+   - {active: 1, id: "6", max_price: 3, min_price: 0.09375, name: "Oak Sapling", stackSize: 64}
+
+   - {active: 0, id: "7", max_price: 100000, min_price: 3125, name: "Bedrock", stackSize: 64}
+
+   - {active: 1, id: "12", max_price: 3, min_price: 0.09375, name: "Sand", stackSize: 64}
+
+   - {active: 1, id: "13", max_price: 2, min_price: 0.0625, name: "Gravel", stackSize: 64}
+
+   - {active: 0, id: "14", max_price: 18, min_price: 0.5625, name: "Gold Ore", stackSize: 64}
+
+   - {active: 0, id: "15", max_price: 12, min_price: 0.375, name: "Iron Ore", stackSize: 64}
+
+   - {active: 0, id: "16", max_price: 7, min_price: 0.21875, name: "Coal Ore", stackSize: 64}
+
+   - {active: 1, id: "17", max_price: 4, min_price: 0.125, name: "Oak Wood", stackSize: 64}
+
+   - {active: 1, id: "18", max_price: 2, min_price: 0.0625, name: "Oak Leaves", stackSize: 64}
+
+   - {active: 0, id: "19", max_price: 64, min_price: 2, name: "Sponge", stackSize: 64}
+
+   - {active: 1, id: "20", max_price: 4, min_price: 0.125, name: "Glass", stackSize: 64}
+
+   - {active: 0, id: "21", max_price: 0, min_price: 0, name: "Lapis Lazuli Ore", stackSize: 64}
+
+   - {active: 0, id: "22", max_price: 0, min_price: 0, name: "Lapis Lazuli Block", stackSize: 64}
+
+   - {active: 0, id: "23", max_price: 25, min_price: 0.78125, name: "Dispenser", stackSize: 64}
+
+   - {active: 1, id: "24", max_price: 4, min_price: 0.125, name: "Sandstone", stackSize: 64}
+
+   - {active: 0, id: "25", max_price: 0, min_price: 0, name: "Note Block", stackSize: 64}
+
+   - {active: 0, id: "27", max_price: 0, min_price: 0, name: "Powered Rail", stackSize: 64}
+
+   - {active: 0, id: "28", max_price: 0, min_price: 0, name: "Detector Rail", stackSize: 64}
+
+   - {active: 0, id: "29", max_price: 64, min_price: 2, name: "Sticky Piston", stackSize: 64}
+
+   - {active: 0, id: "30", max_price: 64, min_price: 2, name: "Cobweb", stackSize: 64}
+
+   - {active: 0, id: "31", max_price: 0, min_price: 0, name: "Fern", stackSize: 64}
+
+   - {active: 0, id: "32", max_price: 0, min_price: 0, name: "Dead Bush", stackSize: 64}
+
+   - {active: 0, id: "33", max_price: 25, min_price: 0.78125, name: "Piston", stackSize: 64}
+
+   - {active: 1, id: "35", max_price: 4, min_price: 0.125, name: "Wool", stackSize: 64}
+
+   - {active: 1, id: "37", max_price: 3, min_price: 0.09375, name: "Flower", stackSize: 64}
+
+   - {active: 1, id: "38", max_price: 3, min_price: 0.25, name: "Rose", stackSize: 64}
+
+   - {active: 1, id: "39", max_price: 3, min_price: 0.09375, name: "Brown Mushroom", stackSize: 64}
+
+   - {active: 1, id: "40", max_price: 3, min_price: 0.09375, name: "Red Mushroom", stackSize: 64}
+
+   - {active: 0, id: "41", max_price: 0, min_price: 0, name: "Block of Gold", stackSize: 64}
+
+   - {active: 0, id: "42", max_price: 0, min_price: 0, name: "Block of Iron", stackSize: 64}
+
+   - {active: 0, id: "44", max_price: 0, min_price: 0, name: "Stone Slab", stackSize: 64}
+
+   - {active: 0, id: "45", max_price: 14, min_price: 0.4375, name: "Bricks", stackSize: 64}
+
+   - {active: 0, id: "46", max_price: 21, min_price: 0.65625, name: "TNT", stackSize: 64}
+
+   - {active: 1, id: "47", max_price: 16, min_price: 0.5, name: "Bookshelf", stackSize: 64}
+
+   - {active: 1, id: "48", max_price: 16, min_price: 0.5, name: "Moss Stone", stackSize: 64}
+
+   - {active: 1, id: "49", max_price: 32, min_price: 1, name: "Obsidian", stackSize: 64}
+
+   - {active: 0, id: "50", max_price: 2, min_price: 0.0625, name: "Torch", stackSize: 64}
+
+   - {active: 0, id: "53", max_price: 1, min_price: 0.03125, name: "Oak Wood Stairs", stackSize: 64}
+
+   - {active: 0, id: "54", max_price: 0, min_price: 0, name: "Chest", stackSize: 64}
+
+   - {active: 0, id: "56", max_price: 843, min_price: 26.34375, name: "Diamond Ore", stackSize: 64}
+
+   - {active: 0, id: "57", max_price: 0, min_price: 0, name: "Block of Diamond", stackSize: 64}
+
+   - {active: 0, id: "58", max_price: 0, min_price: 0, name: "Crafting Table", stackSize: 64}
+
+   - {active: 0, id: "61", max_price: 0, min_price: 0, name: "Furnace", stackSize: 64}
+
+   - {active: 0, id: "65", max_price: 0, min_price: 0, name: "Ladders", stackSize: 64}
+
+   - {active: 1, id: "66", max_price: 3, min_price: 0.09375, name: "Rail", stackSize: 64}
+
+   - {active: 0, id: "67", max_price: 12, min_price: 0.375, name: "Cobblestone stairs", stackSize: 64}
+
+   - {active: 0, id: "69", max_price: 0, min_price: 0, name: "Lever", stackSize: 64}
+
+   - {active: 0, id: "70", max_price: 0, min_price: 0, name: "Stone Pressure Plate", stackSize: 64}
+
+   - {active: 0, id: "72", max_price: 0, min_price: 0, name: "Wood Pressure Plate", stackSize: 64}
+
+   - {active: 0, id: "73", max_price: 0, min_price: 0, name: "Redstone Ore", stackSize: 64}
+
+   - {active: 0, id: "76", max_price: 3, min_price: 0.09375, name: "Redstone Torch", stackSize: 64}
+
+   - {active: 0, id: "77", max_price: 0, min_price: 0, name: "Button", stackSize: 64}
+
+   - {active: 1, id: "79", max_price: 3, min_price: 0.09375, name: "Ice", stackSize: 64}
+
+   - {active: 1, id: "80", max_price: 3, min_price: 0.09375, name: "Snow Block", stackSize: 64}
+
+   - {active: 1, id: "81", max_price: 3, min_price: 0.09375, name: "Cactus", stackSize: 64}
+
+   - {active: 0, id: "82", max_price: 3, min_price: 0.09375, name: "Clay", stackSize: 64}
+
+   - {active: 0, id: "84", max_price: 122, min_price: 3.8125, name: "Jukebox", stackSize: 64}
+
+   - {active: 0, id: "85", max_price: 4, min_price: 0.125, name: "Fence", stackSize: 64}
+
+   - {active: 1, id: "86", max_price: 5, min_price: 0.15625, name: "Pumpkin", stackSize: 64}
+
+   - {active: 1, id: "87", max_price: 2, min_price: 0.0625, name: "Netherrack", stackSize: 64}
+
+   - {active: 1, id: "88", max_price: 3, min_price: 0.09375, name: "Soul Sand", stackSize: 64}
+
+   - {active: 1, id: "89", max_price: 18, min_price: 0.5625, name: "Glowstone", stackSize: 64}
+
+   - {active: 0, id: "91", max_price: 0, min_price: 0, name: "Jack 'o' Lantern", stackSize: 64}
+
+   - {active: 0, id: "354", max_price: 0, min_price: 0, name: "Cake", stackSize: 1}
+
+   - {active: 0, id: "96", max_price: 3, min_price: 0.09375, name: "Trapdoor", stackSize: 64}
+
+   - {active: 0, id: "98", max_price: 7, min_price: 0.21875, name: "Stone Bricks", stackSize: 64}
+
+   - {active: 0, id: "101", max_price: 4, min_price: 0.125, name: "Iron Bars", stackSize: 64}
+
+   - {active: 0, id: "102", max_price: 2, min_price: 0.0625, name: "Glass Pane", stackSize: 64}
+
+   - {active: 0, id: "103", max_price: 2, min_price: 0.0625, name: "Melon Block", stackSize: 64}
+
+   - {active: 0, id: "106", max_price: 3, min_price: 0.09375, name: "Vines", stackSize: 64}
+
+   - {active: 0, id: "107", max_price: 4, min_price: 0.125, name: "Fence Gate", stackSize: 64}
+
+   - {active: 0, id: "108", max_price: 3, min_price: 0.09375, name: "Brick Stairs", stackSize: 64}
+
+   - {active: 0, id: "109", max_price: 0, min_price: 0, name: "Stone Brick Stairs", stackSize: 64}
+
+   - {active: 1, id: "110", max_price: 14, min_price: 0.4375, name: "Mycelium", stackSize: 64}
+
+   - {active: 1, id: "111", max_price: 2, min_price: 0.0625, name: "Lily Pad", stackSize: 64}
+
+   - {active: 1, id: "112", max_price: 14, min_price: 0.4375, name: "Nether Brick", stackSize: 64}
+
+   - {active: 0, id: "113", max_price: 0, min_price: 0, name: "Nether Brick Fence", stackSize: 64}
+
+   - {active: 0, id: "114", max_price: 0, min_price: 0, name: "Nether Brick Stairs", stackSize: 64}
+
+   - {active: 0, id: "116", max_price: 0, min_price: 0, name: "Enchantment Table", stackSize: 64}
+
+   - {active: 0, id: "119", max_price: 0, min_price: 0, name: "End Portal", stackSize: 64}
+
+   - {active: 0, id: "121", max_price: 0, min_price: 0, name: "End Stone", stackSize: 64}
+
+   - {active: 0, id: "123", max_price: 0, min_price: 0, name: "Redstone Lamp", stackSize: 64}
+
+   - {active: 0, id: "126", max_price: 0, min_price: 0, name: "Oak Wood Slab", stackSize: 64}
+
+   - {active: 0, id: "128", max_price: 0, min_price: 0, name: "Sandstone Stairs", stackSize: 64}
+
+   - {active: 0, id: "129", max_price: 0, min_price: 0, name: "Emerald Ore", stackSize: 64}
+
+   - {active: 0, id: "130", max_price: 0, min_price: 0, name: "Ender Chest", stackSize: 64}
+
+   - {active: 0, id: "131", max_price: 0, min_price: 0, name: "Tripwire Hook", stackSize: 64}
+
+   - {active: 0, id: "133", max_price: 0, min_price: 0, name: "Block of Emerald", stackSize: 64}
+
+   - {active: 0, id: "134", max_price: 0, min_price: 0, name: "Spruce Wood Stairs", stackSize: 64}
+
+   - {active: 0, id: "135", max_price: 0, min_price: 0, name: "Birch Wood Stairs", stackSize: 64}
+
+   - {active: 0, id: "136", max_price: 0, min_price: 0, name: "Jungle Wood Stairs", stackSize: 64}
+
+   - {active: 0, id: "256", max_price: 0, min_price: 0, name: "Iron Shovel", stackSize: 64}
+
+   - {active: 0, id: "257", max_price: 18, min_price: 0.5625, name: "Iron Pickaxe", stackSize: 64}
+
+   - {active: 0, id: "258", max_price: 18, min_price: 0.5625, name: "Iron Axe", stackSize: 64}
+
+   - {active: 1, id: "260", max_price: 5, min_price: 0.15625, name: "Apple", stackSize: 64}
+
+   - {active: 0, id: "261", max_price: 14, min_price: 0.4375, name: "Bow", stackSize: 64}
+
+   - {active: 1, id: "262", max_price: 3, min_price: 0.09375, name: "Arrow", stackSize: 64}
+
+   - {active: 1, id: "263", max_price: 8, min_price: 0.25, name: "Coal", stackSize: 64}
+
+   - {active: 1, id: "264", max_price: 808, min_price: 25.25, name: "Diamond", stackSize: 64}
+
+   - {active: 1, id: "265", max_price: 30, min_price: 0.9375, name: "Iron Ingot", stackSize: 64}
+
+   - {active: 1, id: "266", max_price: 32, min_price: 1, name: "Gold Ingot", stackSize: 64}
+
+   - {active: 0, id: "267", max_price: 0, min_price: 0, name: "Iron Sword", stackSize: 64}
+
+   - {active: 0, id: "268", max_price: 0, min_price: 0, name: "Wooden Sword", stackSize: 1}
+
+   - {active: 0, id: "269", max_price: 0, min_price: 0, name: "Wooden Shovel", stackSize: 1}
+
+   - {active: 0, id: "270", max_price: 0, min_price: 0, name: "Wooden Pickaxe", stackSize: 1}
+
+   - {active: 0, id: "271", max_price: 0, min_price: 0, name: "Wooden Axe", stackSize: 64}
+
+   - {active: 0, id: "272", max_price: 0, min_price: 0, name: "Stone Sword", stackSize: 64}
+
+   - {active: 0, id: "273", max_price: 0, min_price: 0, name: "Stone Shovel", stackSize: 64}
+
+   - {active: 0, id: "274", max_price: 0, min_price: 0, name: "Stone Pickaxe", stackSize: 64}
+
+   - {active: 0, id: "275", max_price: 0, min_price: 0, name: "Stone Axe", stackSize: 64}
+
+   - {active: 0, id: "276", max_price: 1606, min_price: 50.1875, name: "Diamond Sword", stackSize: 64}
+
+   - {active: 0, id: "277", max_price: 0, min_price: 0, name: "Diamond Shovel", stackSize: 64}
+
+   - {active: 0, id: "278", max_price: 2409, min_price: 75.28125, name: "Diamond Pickaxe", stackSize: 64}
+
+   - {active: 0, id: "279", max_price: 0, min_price: 0, name: "Diamond Axe", stackSize: 64}
+
+   - {active: 0, id: "280", max_price: 0, min_price: 0, name: "Stick", stackSize: 64}
+
+   - {active: 0, id: "281", max_price: 2, min_price: 0.0625, name: "Bowl", stackSize: 64}
+
+   - {active: 0, id: "282", max_price: 4, min_price: 0.125, name: "Mushroom Soup", stackSize: 64}
+
+   - {active: 0, id: "283", max_price: 14, min_price: 0.4375, name: "Gold Sword", stackSize: 64}
+
+   - {active: 0, id: "284", max_price: 0, min_price: 0, name: "Gold Shovel", stackSize: 64}
+
+   - {active: 0, id: "285", max_price: 18, min_price: 0.5625, name: "Gold Pickaxe", stackSize: 64}
+
+   - {active: 0, id: "286", max_price: 18, min_price: 0.5625, name: "Gold Axe", stackSize: 64}
+
+   - {active: 1, id: "287", max_price: 2, min_price: 0.0625, name: "String", stackSize: 64}
+
+   - {active: 1, id: "288", max_price: 3, min_price: 0.09375, name: "Feather", stackSize: 64}
+
+   - {active: 1, id: "289", max_price: 18, min_price: 0.5625, name: "Gunpowder", stackSize: 64}
+
+   - {active: 0, id: "290", max_price: 0, min_price: 0, name: "Wooden Hoe", stackSize: 1}
+
+   - {active: 0, id: "291", max_price: 0, min_price: 0, name: "Stone Hoe", stackSize: 64}
+
+   - {active: 0, id: "292", max_price: 14, min_price: 0.4375, name: "Iron Hoe", stackSize: 64}
+
+   - {active: 0, id: "293", max_price: 1606, min_price: 50.1875, name: "Diamond Hoe", stackSize: 64}
+
+   - {active: 0, id: "294", max_price: 14, min_price: 0.4375, name: "Gold Hoe", stackSize: 64}
+
+   - {active: 1, id: "295", max_price: 1, min_price: 0.03125, name: "Seeds", stackSize: 64}
+
+   - {active: 1, id: "296", max_price: 3, min_price: 0.09375, name: "Wheat", stackSize: 64}
+
+   - {active: 1, id: "297", max_price: 4, min_price: 0.125, name: "Bread", stackSize: 64}
+
+   - {active: 0, id: "298", max_price: 0, min_price: 0, name: "Leather Cap", stackSize: 64}
+
+   - {active: 0, id: "299", max_price: 0, min_price: 0, name: "Leather Tunic", stackSize: 64}
+
+   - {active: 0, id: "300", max_price: 0, min_price: 0, name: "Leather Pants", stackSize: 64}
+
+   - {active: 0, id: "301", max_price: 0, min_price: 0, name: "Leather Boots", stackSize: 64}
+
+   - {active: 0, id: "302", max_price: 1000, min_price: 31.25, name: "Chain Helmet", stackSize: 1}
+
+   - {active: 0, id: "303", max_price: 3000, min_price: 93.75, name: "Chain Chestplate", stackSize: 1}
+
+   - {active: 0, id: "304", max_price: 2000, min_price: 62.5, name: "Chain Leggings", stackSize: 1}
+
+   - {active: 0, id: "305", max_price: 1000, min_price: 31.25, name: "Chain Boots", stackSize: 1}
+
+   - {active: 0, id: "306", max_price: 0, min_price: 0, name: "Iron Helmet", stackSize: 64}
+
+   - {active: 0, id: "307", max_price: 0, min_price: 0, name: "Iron Chestplate", stackSize: 64}
+
+   - {active: 0, id: "308", max_price: 0, min_price: 0, name: "Iron Leggings", stackSize: 64}
+
+   - {active: 0, id: "309", max_price: 0, min_price: 0, name: "Iron Boots", stackSize: 64}
+
+   - {active: 0, id: "310", max_price: 0, min_price: 0, name: "Diamond Helmet", stackSize: 64}
+
+   - {active: 0, id: "311", max_price: 0, min_price: 0, name: "Diamond Chestplate", stackSize: 64}
+
+   - {active: 0, id: "312", max_price: 0, min_price: 0, name: "Diamond Leggings", stackSize: 64}
+
+   - {active: 0, id: "313", max_price: 0, min_price: 0, name: "Diamond Boots", stackSize: 64}
+
+   - {active: 0, id: "314", max_price: 0, min_price: 0, name: "Gold Helmet", stackSize: 64}
+
+   - {active: 0, id: "315", max_price: 0, min_price: 0, name: "Gold Chestplate", stackSize: 64}
+
+   - {active: 0, id: "316", max_price: 0, min_price: 0, name: "Gold Leggings", stackSize: 64}
+
+   - {active: 0, id: "317", max_price: 0, min_price: 0, name: "Gold Boots", stackSize: 64}
+
+   - {active: 1, id: "318", max_price: 4, min_price: 0.125, name: "Flint", stackSize: 64}
+
+   - {active: 1, id: "319", max_price: 3, min_price: 0.09375, name: "Raw Porkchop", stackSize: 64}
+
+   - {active: 0, id: "320", max_price: 4, min_price: 0.125, name: "Cooked Porkchop", stackSize: 64}
+
+   - {active: 0, id: "321", max_price: 4, min_price: 0.125, name: "Painting", stackSize: 64}
+
+   - {active: 0, id: "322", max_price: 25, min_price: 0.78125, name: "Golden Apple", stackSize: 64}
+
+   - {active: 0, id: "323", max_price: 4, min_price: 0.125, name: "Sign", stackSize: 16}
+
+   - {active: 0, id: "324", max_price: 0, min_price: 0, name: "Wooden Door", stackSize: 1}
+
+   - {active: 0, id: "325", max_price: 14, min_price: 0.4375, name: "Bucket", stackSize: 16}
+
+   - {active: 0, id: "326", max_price: 28, min_price: 0.875, name: "Water Bucket", stackSize: 64}
+
+   - {active: 0, id: "327", max_price: 25, min_price: 0.78125, name: "Lava Bucket", stackSize: 64}
+
+   - {active: 0, id: "328", max_price: 0, min_price: 0, name: "Minecart", stackSize: 1}
+
+   - {active: 1, id: "329", max_price: 35, min_price: 1.09375, name: "Saddle", stackSize: 1}
+
+   - {active: 0, id: "330", max_price: 0, min_price: 0, name: "Iron Door", stackSize: 1}
+
+   - {active: 1, id: "331", max_price: 10, min_price: 0.3125, name: "Redstone", stackSize: 64}
+
+   - {active: 0, id: "332", max_price: 0, min_price: 0, name: "Snowball", stackSize: 16}
+
+   - {active: 0, id: "333", max_price: 2, min_price: 0.0625, name: "Boat", stackSize: 1}
+
+   - {active: 1, id: "334", max_price: 6, min_price: 0.1875, name: "Leather", stackSize: 64}
+
+   - {active: 0, id: "335", max_price: 15.5, min_price: 0.484375, name: "Milk", stackSize: 64}
+
+   - {active: 0, id: "335", max_price: 15.5, min_price: 0.484375, name: "Milk", stackSize: 64}
+
+   - {active: 0, id: "336", max_price: 0, min_price: 0, name: "Clay Brick", stackSize: 64}
+
+   - {active: 1, id: "337", max_price: 2, min_price: 0.0625, name: "Clay", stackSize: 64}
+
+   - {active: 1, id: "338", max_price: 3, min_price: 0.09375, name: "Sugar Cane", stackSize: 64}
+
+   - {active: 0, id: "339", max_price: 0, min_price: 0, name: "Paper", stackSize: 64}
+
+   - {active: 0, id: "340", max_price: 3, min_price: 0.09375, name: "Book", stackSize: 64}
+
+   - {active: 1, id: "341", max_price: 36, min_price: 1.125, name: "Slimeball", stackSize: 64}
+
+   - {active: 0, id: "342", max_price: 0, min_price: 0, name: "Minecart with Chest", stackSize: 1}
+
+   - {active: 0, id: "343", max_price: 0, min_price: 0, name: "Minecart with Furnace", stackSize: 1}
+
+   - {active: 1, id: "344", max_price: 4, min_price: 0.125, name: "Egg", stackSize: 16}
+
+   - {active: 0, id: "345", max_price: 0, min_price: 0, name: "Compass", stackSize: 64}
+
+   - {active: 0, id: "346", max_price: 0, min_price: 0, name: "Fishing Rod", stackSize: 64}
+
+   - {active: 0, id: "347", max_price: 0, min_price: 0, name: "Clock", stackSize: 64}
+
+   - {active: 0, id: "348", max_price: 0, min_price: 0, name: "Glowstone Dust", stackSize: 64}
+
+   - {active: 1, id: "349", max_price: 3, min_price: 0.09375, name: "Raw Fish", stackSize: 64}
+
+   - {active: 0, id: "350", max_price: 2, min_price: 0.0625, name: "Cooked Fish", stackSize: 64}
+
+   - {active: 0, id: "351", max_price: 18, min_price: 0.5625, name: "Bone Meal", stackSize: 64}
+
+   - {active: 0, id: "353", max_price: 0, min_price: 0, name: "Sugar", stackSize: 64}
+
+   - {active: 0, id: "356", max_price: 0, min_price: 0, name: "Redstone Repeater", stackSize: 64}
+
+   - {active: 0, id: "357", max_price: 35, min_price: 1.09375, name: "Cookie", stackSize: 64}
+
+   - {active: 0, id: "358", max_price: 0, min_price: 0, name: "Map", stackSize: 1}
+
+   - {active: 0, id: "259", max_price: 0, min_price: 0, name: "Flint and Steel", stackSize: 64}
+
+   - {active: 0, id: "359", max_price: 4, min_price: 0.125, name: "Shears", stackSize: 64}
+
+   - {active: 1, id: "360", max_price: 2, min_price: 0.0625, name: "Melon Slice", stackSize: 64}
+
+   - {active: 0, id: "361", max_price: 14, min_price: 0.4375, name: "Pumpkin Seeds", stackSize: 64}
+
+   - {active: 0, id: "362", max_price: 5, min_price: 0.15625, name: "Melon Seeds", stackSize: 64}
+
+   - {active: 1, id: "363", max_price: 4, min_price: 0.125, name: "Raw Beef", stackSize: 64}
+
+   - {active: 0, id: "364", max_price: 4, min_price: 0.125, name: "Steak", stackSize: 64}
+
+   - {active: 1, id: "365", max_price: 3, min_price: 0.09375, name: "Raw Chicken", stackSize: 64}
+
+   - {active: 0, id: "366", max_price: 3, min_price: 0.09375, name: "Cooked Chicken", stackSize: 64}
+
+   - {active: 1, id: "367", max_price: 1, min_price: 0.03125, name: "Rotten Flesh", stackSize: 64}
+
+   - {active: 1, id: "368", max_price: 14, min_price: 0.4375, name: "Ender Pearl", stackSize: 16}
+
+   - {active: 1, id: "369", max_price: 18, min_price: 0.5625, name: "Blaze Rod", stackSize: 64}
+
+   - {active: 1, id: "370", max_price: 56, min_price: 1.75, name: "Ghast Tear", stackSize: 64}
+
+   - {active: 0, id: "371", max_price: 0, min_price: 0, name: "Gold Nugget", stackSize: 64}
+
+   - {active: 1, id: "372", max_price: 3, min_price: 0.09375, name: "Neather Wart", stackSize: 64}
+
+   - {active: 0, id: "373", max_price: 0, min_price: 0, name: "Splash Potion of Strength II +", stackSize: 64}
+
+   - {active: 0, id: "373", max_price: 0, min_price: 0, name: "Splash Potion of Strength II +", stackSize: 64}
+
+   - {active: 0, id: "373", max_price: 0, min_price: 0, name: "Splash Potion of Strength II +", stackSize: 64}
+
+   - {active: 0, id: "373", max_price: 0, min_price: 0, name: "Splash Potion of Strength II +", stackSize: 64}
+
+   - {active: 0, id: "373", max_price: 0, min_price: 0, name: "Splash Potion of Strength II +", stackSize: 64}
+
+   - {active: 0, id: "374", max_price: 7, min_price: 0.21875, name: "Glass bottle", stackSize: 64}
+
+   - {active: 1, id: "375", max_price: 2, min_price: 0.0625, name: "Spider Eye", stackSize: 64}
+
+   - {active: 0, id: "376", max_price: 0, min_price: 0, name: "Fermented Spider Eye", stackSize: 64}
+
+   - {active: 0, id: "377", max_price: 0, min_price: 0, name: "Blaze Powder", stackSize: 64}
+
+   - {active: 0, id: "378", max_price: 0, min_price: 0, name: "Magma Cream", stackSize: 64}
+
+   - {active: 0, id: "379", max_price: 0, min_price: 0, name: "Brewing Stand", stackSize: 64}
+
+   - {active: 0, id: "380", max_price: 0, min_price: 0, name: "Cauldron", stackSize: 64}
+
+   - {active: 0, id: "381", max_price: 0, min_price: 0, name: "Eye of Ender", stackSize: 64}
+
+   - {active: 0, id: "382", max_price: 0, min_price: 0, name: "Glistering Melon", stackSize: 64}
+
+   - {active: 0, id: "384", max_price: 0, min_price: 0, name: "Bottle o' Enchanting", stackSize: 64}
+
+   - {active: 0, id: "385", max_price: 0, min_price: 0, name: "Fire Charge", stackSize: 64}
+
+   - {active: 0, id: "386", max_price: 0, min_price: 0, name: "Book and Quill", stackSize: 1}
+
+   - {active: 0, id: "388", max_price: 0, min_price: 0, name: "Emerald", stackSize: 64}
+
+   - {active: 1, id: "2256", max_price: 64, min_price: 2, name: "Music Disk - 13", stackSize: 1}
+
+   - {active: 1, id: "2257", max_price: 64, min_price: 2, name: "Music Disk - Cat", stackSize: 1}
+
+   - {active: 1, id: "2258", max_price: 64, min_price: 2, name: "Music Disk - Blocks", stackSize: 1}
+
+   - {active: 1, id: "2259", max_price: 64, min_price: 2, name: "Music Disk - Chirp", stackSize: 1}
+
+   - {active: 1, id: "2260", max_price: 64, min_price: 2, name: "Music Disk - Far", stackSize: 1}
+
+   - {active: 1, id: "2261", max_price: 64, min_price: 2, name: "Music Disk - Mall", stackSize: 1}
+
+   - {active: 1, id: "2262", max_price: 64, min_price: 2, name: "Music Disk - Mellohi", stackSize: 1}
+
+   - {active: 1, id: "2263", max_price: 64, min_price: 2, name: "Music Disk - Stal", stackSize: 1}
+
+   - {active: 1, id: "2264", max_price: 64, min_price: 2, name: "Music Disk - Strad", stackSize: 1}
+
+   - {active: 1, id: "2265", max_price: 64, min_price: 2, name: "Music Disk - Ward", stackSize: 1}
+
+   - {active: 1, id: "2266", max_price: 64, min_price: 2, name: "Music Disk - 11", stackSize: 1}
+
+   - {active: 0, id: "383t120", max_price: 0, min_price: 0, name: "Spawn Villager", stackSize: 64}
+
+   - {active: 0, id: "383t52", max_price: 0, min_price: 0, name: "Spawn Spider", stackSize: 64}
+
+   - {active: 0, id: "383t54", max_price: 0, min_price: 0, name: "Spawn Zombie", stackSize: 64}
+
+   - {active: 0, id: "383t55", max_price: 0, min_price: 0, name: "Spawn Slime", stackSize: 64}
+
+   - {active: 0, id: "383t56", max_price: 0, min_price: 0, name: "Spawn Ghast", stackSize: 64}
+
+   - {active: 0, id: "383t57", max_price: 0, min_price: 0, name: "Spawn Zombie Pigman", stackSize: 64}
+
+   - {active: 0, id: "383t58", max_price: 0, min_price: 0, name: "Spawn Enderman", stackSize: 64}
+
+   - {active: 0, id: "383t59", max_price: 0, min_price: 0, name: "Spawn Cave Spider", stackSize: 64}
+
+   - {active: 0, id: "383t60", max_price: 0, min_price: 0, name: "Spawn Silverfish", stackSize: 64}
+
+   - {active: 0, id: "383t61", max_price: 0, min_price: 0, name: "Spawn Blaze", stackSize: 64}
+
+   - {active: 0, id: "383t62", max_price: 0, min_price: 0, name: "Spawn Magma Cube", stackSize: 64}
+
+   - {active: 0, id: "383t90", max_price: 0, min_price: 0, name: "Spawn Pig", stackSize: 64}
+
+   - {active: 0, id: "383t91", max_price: 0, min_price: 0, name: "Spawn Sheep", stackSize: 64}
+
+   - {active: 0, id: "383t92", max_price: 0, min_price: 0, name: "Spawn Cow", stackSize: 64}
+
+   - {active: 0, id: "383t93", max_price: 0, min_price: 0, name: "Spawn Chicken", stackSize: 64}
+
+   - {active: 0, id: "383t94", max_price: 0, min_price: 0, name: "Spawn Squid", stackSize: 64}
+
+   - {active: 0, id: "383t95", max_price: 0, min_price: 0, name: "Spawn Wolf", stackSize: 64}
+
+   - {active: 0, id: "383t96", max_price: 0, min_price: 0, name: "Spawn Mooshroom", stackSize: 64}
+
+   - {active: 0, id: "383t98", max_price: 0, min_price: 0, name: "Spawn Ocelot", stackSize: 64}
+
+   - {active: 0, id: "126t1", max_price: 0, min_price: 0, name: "Spruce Wood Slab", stackSize: 64}
+
+   - {active: 0, id: "126t2", max_price: 0, min_price: 0, name: "Birch Wood Slab", stackSize: 64}
+
+   - {active: 0, id: "126t3", max_price: 0, min_price: 0, name: "Jungle Wood Slab", stackSize: 64}
+
+   - {active: 1, id: "17t1", max_price: 4, min_price: 0.125, name: "Spruce Wood", stackSize: 64}
+
+   - {active: 1, id: "17t2", max_price: 4, min_price: 0.125, name: "Birch Wood", stackSize: 64}
+
+   - {active: 1, id: "17t3", max_price: 4, min_price: 0.125, name: "Jungle Wood", stackSize: 64}
+
+   - {active: 1, id: "18t1", max_price: 2, min_price: 0.0625, name: "Spruce Leaves", stackSize: 64}
+
+   - {active: 1, id: "18t2", max_price: 2, min_price: 0.0625, name: "Birch Leaves", stackSize: 64}
+
+   - {active: 1, id: "18t3", max_price: 2, min_price: 0.0625, name: "Jungle Leaves", stackSize: 64}
+
+   - {active: 0, id: "24t1", max_price: 4, min_price: 0.125, name: "Chiseled Sandstone", stackSize: 64}
+
+   - {active: 0, id: "24t2", max_price: 4, min_price: 0.125, name: "Smooth Sandstone", stackSize: 64}
+
+   - {active: 0, id: "263t1", max_price: 4.5, min_price: 0.140625, name: "Charcoal", stackSize: 64}
+
+   - {active: 0, id: "322t1", max_price: 25, min_price: 0.78125, name: "Enchanted Golden Apple", stackSize: 64}
+
+   - {active: 0, id: "351t1", max_price: 0, min_price: 0, name: "Rose Red", stackSize: 64}
+
+   - {active: 0, id: "351t10", max_price: 0, min_price: 0, name: "Lime Dye", stackSize: 64}
+
+   - {active: 0, id: "351t11", max_price: 0, min_price: 0, name: "Dandelion Dye", stackSize: 64}
+
+   - {active: 0, id: "351t12", max_price: 0, min_price: 0, name: "Light Blue Dye", stackSize: 64}
+
+   - {active: 0, id: "351t13", max_price: 0, min_price: 0, name: "Magenta Dye", stackSize: 64}
+
+   - {active: 0, id: "351t14", max_price: 0, min_price: 0, name: "Orange Dye", stackSize: 64}
+
+   - {active: 0, id: "351t15", max_price: 0, min_price: 0, name: "Bone Meal", stackSize: 64}
+
+   - {active: 0, id: "351t2", max_price: 0, min_price: 0, name: "Cactus Green", stackSize: 64}
+
+   - {active: 1, id: "351t3", max_price: 3, min_price: 0.09375, name: "Cocoa Beans", stackSize: 64}
+
+   - {active: 1, id: "351t4", max_price: 16, min_price: 0.5, name: "Lapis Lazuli", stackSize: 64}
+
+   - {active: 0, id: "351t5", max_price: 0, min_price: 0, name: "Purple Dye", stackSize: 64}
+
+   - {active: 0, id: "351t6", max_price: 0, min_price: 0, name: "Cyan Dye", stackSize: 64}
+
+   - {active: 0, id: "351t7", max_price: 0, min_price: 0, name: "Light Gray Dye", stackSize: 64}
+
+   - {active: 0, id: "351t8", max_price: 0, min_price: 0, name: "Gray Dye", stackSize: 64}
+
+   - {active: 0, id: "351t9", max_price: 0, min_price: 0, name: "Pink Dye", stackSize: 64}
+
+   - {active: 0, id: "373t16385", max_price: 0, min_price: 0, name: "Splash Potion of Regeneration", stackSize: 64}
+
+   - {active: 0, id: "373t16386", max_price: 0, min_price: 0, name: "Splash Potion of Swiftness", stackSize: 64}
+
+   - {active: 0, id: "373t16387", max_price: 0, min_price: 0, name: "Splash Potion of Fire Resistance", stackSize: 64}
+
+   - {active: 0, id: "373t16388", max_price: 0, min_price: 0, name: "Splash Potion of Poison", stackSize: 64}
+
+   - {active: 0, id: "373t16392", max_price: 0, min_price: 0, name: "Splash Potion of Weakness", stackSize: 64}
+
+   - {active: 0, id: "373t16393", max_price: 0, min_price: 0, name: "Splash Potion of Strength", stackSize: 64}
+
+   - {active: 0, id: "373t16394", max_price: 0, min_price: 0, name: "Splash Potion of Slowness", stackSize: 64}
+
+   - {active: 0, id: "373t16471", max_price: 0, min_price: 0, name: "Splash Potion of Regeneration II", stackSize: 64}
+
+   - {active: 0, id: "373t16418", max_price: 0, min_price: 0, name: "Splash Potion of Swiftness II", stackSize: 64}
+
+   - {active: 0, id: "373t16420", max_price: 0, min_price: 0, name: "Splash Potion of Posion II", stackSize: 64}
+
+   - {active: 0, id: "373t16425", max_price: 0, min_price: 0, name: "Splash Potion of Strength II", stackSize: 64}
+
+   - {active: 0, id: "373t16449", max_price: 0, min_price: 0, name: "Splash Potion of Regeneration +", stackSize: 64}
+
+   - {active: 0, id: "373t16450", max_price: 0, min_price: 0, name: "Splash Potion of Swiftness +", stackSize: 64}
+
+   - {active: 0, id: "373t16451", max_price: 0, min_price: 0, name: "Splash Potion of Fire Resistance +", stackSize: 64}
+
+   - {active: 0, id: "373t16452", max_price: 0, min_price: 0, name: "Splash Potion of Poison +", stackSize: 64}
+
+   - {active: 0, id: "373t16456", max_price: 0, min_price: 0, name: "Splash Potion of Weakness +", stackSize: 64}
+
+   - {active: 0, id: "373t16457", max_price: 0, min_price: 0, name: "Splash Potion of Strength +", stackSize: 64}
+
+   - {active: 0, id: "373t16458", max_price: 0, min_price: 0, name: "Splash Potion of Slowness +", stackSize: 64}
+
+   - {active: 0, id: "373t8193", max_price: 0, min_price: 0, name: "Potion of Regeneration", stackSize: 64}
+
+   - {active: 0, id: "373t8194", max_price: 0, min_price: 0, name: "Potion of Swiftness", stackSize: 64}
+
+   - {active: 0, id: "373t8195", max_price: 0, min_price: 0, name: "Potion of Fire Resistance", stackSize: 64}
+
+   - {active: 0, id: "373t8196", max_price: 0, min_price: 0, name: "Potion of Poison", stackSize: 64}
+
+   - {active: 0, id: "373t8197", max_price: 0, min_price: 0, name: "Potion of Instant Health", stackSize: 64}
+
+   - {active: 0, id: "373t8200", max_price: 0, min_price: 0, name: "Potion of Weakness", stackSize: 64}
+
+   - {active: 0, id: "373t8201", max_price: 0, min_price: 0, name: "Potion of Strength", stackSize: 64}
+
+   - {active: 0, id: "373t8202", max_price: 0, min_price: 0, name: "Potion of Slowness", stackSize: 64}
+
+   - {active: 0, id: "373t8204", max_price: 0, min_price: 0, name: "Potion of Harming", stackSize: 64}
+
+   - {active: 0, id: "373t8225", max_price: 0, min_price: 0, name: "Potion of Regeneration II", stackSize: 64}
+
+   - {active: 0, id: "373t8226", max_price: 0, min_price: 0, name: "Potion of Swiftness II", stackSize: 64}
+
+   - {active: 0, id: "373t8228", max_price: 0, min_price: 0, name: "Potion of Posion II", stackSize: 64}
+
+   - {active: 0, id: "373t8229", max_price: 0, min_price: 0, name: "Potion of Healing II", stackSize: 64}
+
+   - {active: 0, id: "373t8233", max_price: 0, min_price: 0, name: "Potion of Strength II", stackSize: 64}
+
+   - {active: 0, id: "373t8236", max_price: 0, min_price: 0, name: "Potion of Harming II", stackSize: 64}
+
+   - {active: 0, id: "373t8257", max_price: 0, min_price: 0, name: "Potion of Regeneration +", stackSize: 64}
+
+   - {active: 0, id: "373t8258", max_price: 0, min_price: 0, name: "Potion of Swiftness +", stackSize: 64}
+
+   - {active: 0, id: "373t8259", max_price: 0, min_price: 0, name: "Potion of Fire Resistance +", stackSize: 64}
+
+   - {active: 0, id: "373t8260", max_price: 0, min_price: 0, name: "Potion of Poison +", stackSize: 64}
+
+   - {active: 0, id: "373t8264", max_price: 0, min_price: 0, name: "Potion of Weakness +", stackSize: 64}
+
+   - {active: 0, id: "373t8265", max_price: 0, min_price: 0, name: "Potion of Strength +", stackSize: 64}
+
+   - {active: 0, id: "373t8266", max_price: 0, min_price: 0, name: "Potion of Slowness +", stackSize: 64}
+
+   - {active: 0, id: "383t50", max_price: 0, min_price: 0, name: "Spawn Creeper", stackSize: 64}
+
+   - {active: 0, id: "383t51", max_price: 0, min_price: 0, name: "Spawn Skeleton", stackSize: 64}
+
+   - {active: 0, id: "44t1", max_price: 0, min_price: 0, name: "Sandstone Slab", stackSize: 64}
+
+   - {active: 0, id: "44t2", max_price: 0, min_price: 0, name: "Cobblestone Slab", stackSize: 64}
+
+   - {active: 0, id: "44t4", max_price: 3, min_price: 0.09375, name: "Bricks Slab", stackSize: 64}
+
+   - {active: 0, id: "44t5", max_price: 0, min_price: 0, name: "Stone Bricks Slab", stackSize: 64}
+
+   - {active: 0, id: "5t1", max_price: 3, min_price: 0.09375, name: "Spruce Wood Planks", stackSize: 64}
+
+   - {active: 0, id: "5t2", max_price: 3, min_price: 0.09375, name: "Birch Wood Planks", stackSize: 64}
+
+   - {active: 0, id: "5t3", max_price: 3, min_price: 0.09375, name: "Jungle Wood Planks", stackSize: 64}
+
+   - {active: 1, id: "6t1", max_price: 3, min_price: 0.09375, name: "Spruce Sapling", stackSize: 64}
+
+   - {active: 1, id: "6t2", max_price: 3, min_price: 0.09375, name: "Birch Sapling", stackSize: 64}
+
+   - {active: 1, id: "6t3", max_price: 3, min_price: 0.09375, name: "Jungle Sapling", stackSize: 64}
+
+   - {active: 0, id: "97t0", max_price: 0, min_price: 0, name: "Stone Monster Egg", stackSize: 64}
+
+   - {active: 0, id: "97t1", max_price: 0, min_price: 0, name: "Cobblestone Monster Egg", stackSize: 64}
+
+   - {active: 0, id: "97t2", max_price: 0, min_price: 0, name: "Stone Brick Monster Egg", stackSize: 64}
+
+   - {active: 0, id: "98t1", max_price: 0, min_price: 0, name: "Mossy Stone Bricks", stackSize: 64}
+
+   - {active: 0, id: "98t2", max_price: 0, min_price: 0, name: "Cracked Stone Bricks", stackSize: 64}
+
+   - {active: 0, id: "98t3", max_price: 7, min_price: 0.21875, name: "Chisled Stone Bricks", stackSize: 64}
+
+   - {active: 1, id: "35t1", max_price: 4, min_price: 0.125, name: "Orange Wool", stackSize: 64}
+
+   - {active: 1, id: "35t10", max_price: 4, min_price: 0.125, name: "Purple Wool", stackSize: 64}
+
+   - {active: 1, id: "35t11", max_price: 4, min_price: 0.125, name: "Blue Wool", stackSize: 64}
+
+   - {active: 1, id: "35t12", max_price: 4, min_price: 0.125, name: "Brown Wool", stackSize: 64}
+
+   - {active: 1, id: "35t13", max_price: 4, min_price: 0.125, name: "Green Wool", stackSize: 64}
+
+   - {active: 1, id: "35t14", max_price: 4, min_price: 0.125, name: "Red Wool", stackSize: 64}
+
+   - {active: 1, id: "35t15", max_price: 4, min_price: 0.125, name: "Black Wool", stackSize: 64}
+
+   - {active: 1, id: "35t2", max_price: 4, min_price: 0.125, name: "Magneta Wool", stackSize: 64}
+
+   - {active: 1, id: "35t3", max_price: 4, min_price: 0.125, name: "Light Blue Wool", stackSize: 64}
+
+   - {active: 1, id: "35t4", max_price: 4, min_price: 0.125, name: "Yellow Wool", stackSize: 64}
+
+   - {active: 1, id: "35t5", max_price: 4, min_price: 0.125, name: "Lime Wool", stackSize: 64}
+
+   - {active: 1, id: "35t6", max_price: 4, min_price: 0.125, name: "Pink Wool", stackSize: 64}
+
+   - {active: 1, id: "35t7", max_price: 4, min_price: 0.125, name: "Gray Wool", stackSize: 64}
+
+   - {active: 1, id: "35t8", max_price: 4, min_price: 0.125, name: "Light Gray Wool", stackSize: 64}
+
+   - {active: 1, id: "35t9", max_price: 4, min_price: 0.125, name: "Cyan Wool", stackSize: 64}
+
+   - {active: 1, id: "352", max_price: 3, min_price: 0.25, name: "Bone", stackSize: 64}
+
+   - {active: 1, id: "2267", max_price: 64, min_price: 2, name: "Music Disk - Wait", stackSize: 1}
+
+   - {active: 1, id: "392", max_price: 3, min_price: 0.09375, name: "Potato", stackSize: 64}
+
+   - {active: 1, id: "391", max_price: 3, min_price: 0.09375, name: "Carrot", stackSize: 64}

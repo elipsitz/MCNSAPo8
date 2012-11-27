@@ -1,0 +1,43 @@
+name: MCNSAPo8
+main: com.aegamesi.mc.po8.Po8Plugin
+version: 1.2.8.0
+authors: [PickleMan, aegamesi, admin.aegamesi@gmail.com]
+description: MCNSA's Po8 Plugin...mostly automatic.
+
+commands:
+   po8:
+      description: Use this to access all of the PO8 commands
+      usage: /<command>
+permissions:
+   po8.spawnchest:
+      description: Allows you to spawn special (buy, sell, etc.) po8 chests
+      default: false
+   po8.examine:
+      description: Allows you to view a po8 chest of any user
+      default: false
+   po8.review:
+      description: Allows you to review po8 orders...essentially, shopkeep permission
+      default: false
+
+   po8.basic:
+      description: Allows you basic usage of po8
+      default: true
+      children:
+         po8.balance: true
+         po8.transfer: true
+         po8.info: true
+         po8.sell: true
+         po8.order: true
+         po8.value: true
+   po8.balance:
+      description: Allows you to query the balance of your po8 account
+   po8.transfer:
+      description: Allows you to transfer po8 from yourself to another player
+   po8.info:
+      description: Allows you to query the price and stock of po8
+   po8.sell:
+      description: Allows you to sell the contents of your sell chest
+   po8.value:
+      description: Allows you to value the items in your sell chest
+   po8.order:
+      description: Allows you to create and buy orders
