@@ -116,6 +116,9 @@ public class Po8 {
 	public static void init(Po8Plugin plugin) {
 		Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(plugin, new Runnable() {
 			public void run() {
+				if(Po8.orderList.size() <= 0)
+					return;
+				
 				Player[] players = Bukkit.getServer().getOnlinePlayers();
 				for (Player player : players) {
 					if (player.hasPermission("po8.review"))

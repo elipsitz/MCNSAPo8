@@ -101,8 +101,38 @@ public class Po8CommandExecutor implements CommandExecutor {
 			Po8Util.log(p.getName(), to.getName(), amount, "P2P_TRANSFER", "--");
 			return true;
 		}
+		if (args[0].equalsIgnoreCase("grant")) {
+			if (!sender.hasPermission("po8.grant")) {
+				Po8Util.message(sender, "&cYou don't have permission to do that!");
+				return true;
+			}
+			if (args.length != 3) {
+				Po8Util.message(sender, "Invalid arguments for /po8 grant");
+				return true;
+			}
+			double amount;
+			try {
+				amount = Double.parseDouble(args[2]);
+			} catch (NumberFormatException e) {
+				Po8Util.message(sender, "Invalid arguments for /po8 grant");
+				return true;
+			}
+			Player to = Bukkit.getPlayer(args[1]);
+			if (to == null) {
+				Po8Util.message(sender, "&c\"" + args[1] + "\" is not currently online");
+				return true;
+			}
+			Po8.playerMap.get(to.getName()).balance += amount;
+			Po8Util.message(p, "Granted &a" + amount + "&f Po8 to &a" + to.getDisplayName());
+			if(amount >= 0)
+				Po8Util.message(to, "You have been granted &a" + amount + " Po8 by &a" + p.getDisplayName());
+			else
+				Po8Util.message(to, "&a" + amount + " Po8 has been removed from your account by &a" + p.getDisplayName());
+			Po8Util.log(p.getName(), to.getName(), amount, "GRANT", "--");
+			return true;
+		}
 		if (args[0].equalsIgnoreCase("version")) {
-			Po8Util.message(sender, "&dPo8 Plugin by PickleMan (aegamesi) (admin.aegamesi@gmail.com) v4");
+			Po8Util.message(sender, "&dPo8 Plugin by PickleMan (aegamesi) (admin.aegamesi@gmail.com) v1.2.9.0");
 			if (args.length > 1)
 				Po8Util.message(sender, Po8Util.combine(args, 1, 0));
 			return true;
@@ -204,6 +234,7 @@ public class Po8CommandExecutor implements CommandExecutor {
 			ItemStack[] inv = player.getInventory(type);
 			Po8InventoryHolder holder = new Po8InventoryHolder(type, newName, inv);
 			p.openInventory(holder.getInventory());
+			Po8Util.message(sender, "&a" + newName + " &f has &a" +  Po8Util.round2(Po8.playerMap.get(newName).balance) + " &fPo8");
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("sell")) {
@@ -286,7 +317,7 @@ public class Po8CommandExecutor implements CommandExecutor {
 					int value = entry.getValue();
 					totalValue += Po8Util.getBasePrice(key) * value;
 				}
-				Po8Util.message(sender, "The total price of your Po8 Buy Order is &a" + totalValue + "&f Po8");
+				Po8Util.message(sender, "The total price of your Po8 Buy Order is &a" + Po8Util.round2(totalValue) + "&f Po8");
 				return true;
 			}
 			if (args[1].equalsIgnoreCase("list")) {
@@ -500,7 +531,7 @@ public class Po8CommandExecutor implements CommandExecutor {
 					if (order.type == Po8.BUY)
 						Po8Util.message(Bukkit.getPlayerExact(order.owner), "There are new items in your Po8 Buy Chest!");
 					if (order.type == Po8.SELL)
-						Po8Util.message(Bukkit.getPlayerExact(order.owner), "You have successfully sold &a" + order.value + " &fPo8 worth of items!");
+						Po8Util.message(Bukkit.getPlayerExact(order.owner), "You have successfully sold &a" + Po8Util.round2(order.value) + " &fPo8 worth of items!");
 				}
 				if (order.type == Po8.BUY) {
 					// transfer items to chest
@@ -600,7 +631,7 @@ public class Po8CommandExecutor implements CommandExecutor {
 				Po8Util.message(to, " &e/po8 sell - &7Sells the contents of your sell chest");
 			if (to.hasPermission("po8.value"))
 				Po8Util.message(to, " &e/po8 value - &7Values the contents of your sell chest");
-			Po8Util.message(to, "Type /po8 help 2 to see the next page");
+			Po8Util.message(to, "&dPo8 Help: Page (1/3)");
 		}
 		if (page == 2) {
 			if (to.hasPermission("po8.order")) {
@@ -615,7 +646,7 @@ public class Po8CommandExecutor implements CommandExecutor {
 				Po8Util.message(to, " &e/po8 examine [player] [type] - &7Views the given Po8 chest of a player. Must be exact.");
 				Po8Util.message(to, " -------- &7Types: 'buy' or 'sell' ");
 			}
-			Po8Util.message(to, "Type /po8 help 3 to see the next page");
+			Po8Util.message(to, "&dPo8 Help: Page (2/3)");
 		}
 		if (page == 3) {
 			if (to.hasPermission("po8.review")) {
@@ -631,6 +662,10 @@ public class Po8CommandExecutor implements CommandExecutor {
 				Po8Util.message(to, " &e/po8 spawnchest [type] - &7Turns the block you're standing on into a special chest");
 				Po8Util.message(to, "  -------- &7Types: 'buy' or 'sell' ");
 			}
+			if (to.hasPermission("po8.grant")) {
+				Po8Util.message(to, " &e/po8 grant [username] [amount] - &7Grants some Po8 to a player");
+			}
+			Po8Util.message(to, "&dPo8 Help: Page (3/3)");
 		}
 	}
 }

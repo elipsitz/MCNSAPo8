@@ -1,6 +1,6 @@
 name: MCNSAPo8
 main: com.aegamesi.mc.po8.Po8Plugin
-version: 1.2.8.0
+version: 1.2.9.0
 authors: [PickleMan, aegamesi, admin.aegamesi@gmail.com]
 description: MCNSA's Po8 Plugin...mostly automatic.
 
@@ -17,6 +17,9 @@ permissions:
       default: false
    po8.review:
       description: Allows you to review po8 orders...essentially, shopkeep permission
+      default: false
+   po8.grant:
+      description: Allows you to grant people po8
       default: false
 
    po8.basic:
