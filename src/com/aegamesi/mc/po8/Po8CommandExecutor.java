@@ -265,6 +265,12 @@ public class Po8CommandExecutor implements CommandExecutor {
 				Po8.orderList.add(new Po8Order(Po8.SELL, totalValue, sender.getName(), sellOrder.toArray(new ItemStack[0])));
 			} else {
 				Po8Util.message(sender, "&cError: Empty Sell Order");
+				Player[] players = Bukkit.getServer().getOnlinePlayers();
+				for (Player player : players) {
+					if (player.hasPermission("po8.review") && Po8.playerMap.get(player.getName()).notify)
+						Po8Util.message(player, "&dNOTE: The following user submitted an empty sell order: " + sender.getName());
+				}
+				return true;
 			}
 			if (notAllowed)
 				Po8Util.message(sender, "&dWARNING: Your sell chest contains one or more unsellable items!");
