@@ -422,7 +422,7 @@ items:
 
    - {active: 0, id: "371", max_price: 0, min_price: 0, name: "Gold Nugget", stackSize: 64}
 
-   - {active: 1, id: "372", max_price: 3, min_price: 0.09375, name: "Neather Wart", stackSize: 64}
+   - {active: 1, id: "372", max_price: 3, min_price: 0.09375, name: "Netherwart", stackSize: 64}
 
    - {active: 0, id: "373", max_price: 0, min_price: 0, name: "Splash Potion of Strength II +", stackSize: 64}
 
