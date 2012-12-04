@@ -2,8 +2,9 @@ import java.util.HashMap;
 
 import org.bukkit.inventory.ItemStack;
 
-import com.aegamesi.mc.po8.*;
-import com.aegamesi.mc.po8.support.*;
+import com.aegamesi.mc.po8.Po8;
+import com.aegamesi.mc.po8.Po8Player;
+import com.aegamesi.mc.po8.support.SLAPI;
 
 public class Testbed {
 	public static void main(String[] args) {

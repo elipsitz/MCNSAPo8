@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.material.MaterialData;
 
 /**
  * A serializable ItemStack
@@ -34,7 +35,7 @@ public class CardboardBox implements Serializable {
 			this.amount = item.getAmount();
 			this.damage = item.getDurability();
 			this.data = item.getData().getData();
-
+			
 			HashMap<CardboardEnchantment, Integer> map = new HashMap<CardboardEnchantment, Integer>();
 
 			Map<Enchantment, Integer> enchantments = item.getEnchantments();
@@ -51,8 +52,12 @@ public class CardboardBox implements Serializable {
 		if (isNull)
 			return null;
 
-		ItemStack item = new ItemStack(type, amount, damage, data);
-
+		ItemStack item = new ItemStack(type);
+		item.setAmount(amount);
+		item.setDurability(damage);
+		item.setData(new MaterialData(type, data));
+		//ItemStack item = new ItemStack(type, amount, damage, data);
+		
 		HashMap<Enchantment, Integer> map = new HashMap<Enchantment, Integer>();
 
 		for (CardboardEnchantment cEnchantment : enchants.keySet()) {

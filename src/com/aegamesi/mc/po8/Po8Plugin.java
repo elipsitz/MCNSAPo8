@@ -39,7 +39,7 @@ public final class Po8Plugin extends JavaPlugin implements Listener {
 
 		if (evt.getPlayer().hasPermission("po8.review"))
 			Po8Util.message(evt.getPlayer(), "&dThere are&5 " + Po8.orderList.size() + " &dnew Po8 orders to be reviewed.");
-		
+
 		Po8.playerMap.get(evt.getPlayer().getName()).isReviewingOrder = false;
 
 		/*

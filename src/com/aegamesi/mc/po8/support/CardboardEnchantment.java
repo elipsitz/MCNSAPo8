@@ -1,7 +1,7 @@
 package com.aegamesi.mc.po8.support;
  
 import java.io.Serializable;
- 
+
 import org.bukkit.enchantments.Enchantment;
  
 /**
