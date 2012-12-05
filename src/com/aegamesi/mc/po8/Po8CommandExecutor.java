@@ -506,7 +506,7 @@ public class Po8CommandExecutor implements CommandExecutor {
 					ArrayList<ItemStack> stacks = new ArrayList<ItemStack>();
 					Collections.addAll(stacks, order.getItems());
 					System.out.println(order.getItems().length + " " + stacks.size());
-					ItemStack[] buyInv = Po8.playerMap.get(sender.getName()).getInventory(Po8.BUY);
+					ItemStack[] buyInv = Po8.playerMap.get(order.owner).getInventory(Po8.BUY);
 					for (int i = 0; i < buyInv.length; i++) {
 						if (stacks.size() <= 0)
 							break;
@@ -544,7 +544,7 @@ public class Po8CommandExecutor implements CommandExecutor {
 					ArrayList<ItemStack> stacks = new ArrayList<ItemStack>();
 					Collections.addAll(stacks, order.getItems());
 					System.out.println(order.getItems().length + " " + stacks.size());
-					ItemStack[] buyInv = Po8.playerMap.get(sender.getName()).getInventory(Po8.BUY);
+					ItemStack[] buyInv = Po8.playerMap.get(order.owner).getInventory(Po8.BUY);
 					for (int i = 0; i < buyInv.length; i++) {
 						if (stacks.size() <= 0)
 							break;
