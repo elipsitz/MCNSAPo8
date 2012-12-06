@@ -99,4 +99,14 @@ public final class Po8Plugin extends JavaPlugin implements Listener {
 		if (Po8.playerMap.get(evt.getWhoClicked().getName()).isReviewingOrder)
 			evt.setCancelled(true);
 	}
+
+	// for use in other plugins
+	// returns new balance
+	// returns -1 if user not found
+	public double balanceAdd(String name, double amount) {
+		if (!Po8.playerMap.containsKey(name))
+			return -1;
+		Po8.playerMap.get(name).balance += amount;
+		return Po8.playerMap.get(name).balance;
+	}
 }
