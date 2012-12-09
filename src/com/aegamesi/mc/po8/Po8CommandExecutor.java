@@ -1,7 +1,11 @@
 package com.aegamesi.mc.po8;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.bukkit.Bukkit;
@@ -15,6 +19,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import com.aegamesi.mc.po8.support.CardboardBox;
+import com.aegamesi.mc.po8.support.SLAPI;
 import com.aegamesi.mc.po8.support.SerializedLocation;
 
 public class Po8CommandExecutor implements CommandExecutor {
@@ -55,6 +60,90 @@ public class Po8CommandExecutor implements CommandExecutor {
 				}
 			}
 			sendHelp(sender, num);
+			return true;
+		}
+		if (args[0].equalsIgnoreCase("fix")) {
+			if (!sender.hasPermission("po8.grant")) {
+				Po8Util.message(sender, "&cYou don't have permission to do that!");
+				return true;
+			}
+			HashMap<String, Po8Player> oldMap = null;
+
+			SLAPI slapi = new SLAPI();
+			try {
+				oldMap = slapi.load(plugin.getDataFolder() + File.separator + "defaults.bin");
+			} catch (Exception e) {
+				e.printStackTrace();
+				Po8Util.message(sender, "Failed to read defaults.bin");
+				return true;
+			}
+			BufferedReader br;
+			try {
+				br = new BufferedReader(new FileReader(plugin.getDataFolder() + File.separator + "log.csv"));
+			} catch (Exception e) {
+				e.printStackTrace();
+				Po8Util.message(sender, "Failed to read log.csv");
+				return true;
+			}
+			try {
+				String line;
+				br.readLine();
+				double commission = 0.02;
+				while ((line = br.readLine()) != null) {
+					// from,to,time,amount,type,notes
+					String[] split = line.split(",");
+					String from = split[0].substring(1, split[0].length() - 1);
+					String to = split[1].substring(1, split[1].length() - 1);
+					double amount = Double.parseDouble(split[3].substring(1, split[3].length() - 1));
+					String type = split[4].substring(1, split[4].length() - 1);
+					String notes = split[5].substring(1, split[5].length() - 1);
+
+					if (type.equals("SELL")) {
+						if (!oldMap.containsKey(to))
+							oldMap.put(to, new Po8Player());
+						if (!oldMap.containsKey(notes))
+							oldMap.put(notes, new Po8Player());
+						oldMap.get(to).balance += amount;
+						if (notes != to)
+							oldMap.get(notes).balance += (amount * commission);
+					}
+					if (type.equals("BUY")) {
+						if (!oldMap.containsKey(from))
+							oldMap.put(from, new Po8Player());
+						if (!oldMap.containsKey(notes))
+							oldMap.put(notes, new Po8Player());
+						oldMap.get(from).balance -= amount;
+						if (notes != from)
+							oldMap.get(notes).balance += (amount * commission);
+					}
+					if (type.equals("P2P_TRANSFER")) {
+						if (!oldMap.containsKey(to))
+							oldMap.put(to, new Po8Player());
+						if (!oldMap.containsKey(from))
+							oldMap.put(from, new Po8Player());
+						oldMap.get(from).balance -= amount;
+						oldMap.get(to).balance += amount;
+					}
+					if (type.equals("GRANT")) {
+						if (!oldMap.containsKey(to))
+							oldMap.put(to, new Po8Player());
+						oldMap.get(to).balance += amount;
+					}
+				}
+
+				for (Map.Entry<String, Po8Player> entry : oldMap.entrySet()) {
+					if (!Po8.playerMap.containsKey(entry.getKey()))
+						Po8.playerMap.put(entry.getKey(), new Po8Player());
+					Po8.playerMap.get(entry.getKey()).balance = entry.getValue().balance;
+				}
+
+				br.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+				Po8Util.message(sender, "Failed to do some stuff.");
+				return true;
+			}
+			Po8Util.message(sender, "Fixed Po8...hopefully.");
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("balance")) {
@@ -124,7 +213,7 @@ public class Po8CommandExecutor implements CommandExecutor {
 			}
 			Po8.playerMap.get(to.getName()).balance += amount;
 			Po8Util.message(p, "Granted &a" + amount + "&f Po8 to &a" + to.getDisplayName());
-			if(amount >= 0)
+			if (amount >= 0)
 				Po8Util.message(to, "You have been granted &a" + amount + " Po8 by &a" + p.getDisplayName());
 			else
 				Po8Util.message(to, "&a" + amount + " Po8 has been removed from your account by &a" + p.getDisplayName());
@@ -234,7 +323,7 @@ public class Po8CommandExecutor implements CommandExecutor {
 			ItemStack[] inv = player.getInventory(type);
 			Po8InventoryHolder holder = new Po8InventoryHolder(type, newName, inv);
 			p.openInventory(holder.getInventory());
-			Po8Util.message(sender, "&a" + newName + " &f has &a" +  Po8Util.round2(Po8.playerMap.get(newName).balance) + " &fPo8");
+			Po8Util.message(sender, "&a" + newName + " &f has &a" + Po8Util.round2(Po8.playerMap.get(newName).balance) + " &fPo8");
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("sell")) {
