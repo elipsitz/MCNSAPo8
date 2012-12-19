@@ -78,14 +78,16 @@ public class Po8Util {
 		ItemStack[] stacks = new ItemStack[pack2.length];
 		for (int i = 0; i < pack2.length; i++) {
 			String[] pack3 = pack2[i].split(",");
-			stacks[i] = new ItemStack(Integer.parseInt(pack3[0]), Integer.parseInt(pack3[1]), (short) 0, Byte.parseByte(pack3[2]));
+			stacks[i] = new ItemStack(Integer.parseInt(pack3[0]), Integer.parseInt(pack3[1]), (short) 0);
+			stacks[i].setData(new MaterialData(Integer.parseInt(pack3[0]), Byte.parseByte(pack3[2])));
 		}
 		return stacks;
 	}
 
 	public static ItemStack[] splitStack(String key, int amt) {
 		MaterialData dataKey = dataKey(key);
-		ItemStack stack = new ItemStack(dataKey.getItemType(), amt, (short) 0, dataKey.getData());
+		ItemStack stack = new ItemStack(dataKey.getItemType(), amt, (short) 0);
+		stack.setData(new MaterialData(dataKey.getItemType(), dataKey.getData()));
 		double num = stack.getAmount();
 		int size = (int) Math.ceil(num / ((double) stack.getMaxStackSize()));
 		ItemStack[] stacks = new ItemStack[size];

@@ -114,7 +114,7 @@ public class Po8 {
 	}
 
 	public static void init(Po8Plugin plugin) {
-		Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(plugin, new Runnable() {
+		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
 			public void run() {
 				if(Po8.orderList.size() <= 0)
 					return;

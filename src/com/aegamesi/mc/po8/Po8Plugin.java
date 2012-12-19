@@ -1,7 +1,7 @@
 package com.aegamesi.mc.po8;
 
 import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.block.CraftChest;
+import org.bukkit.craftbukkit.v1_4_5.block.CraftChest;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
