@@ -1,7 +1,7 @@
 package com.aegamesi.mc.po8;
 
+import org.bukkit.block.Chest;
 import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.v1_4_5.block.CraftChest;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -60,8 +60,8 @@ public final class Po8Plugin extends JavaPlugin implements Listener {
 
 	@EventHandler
 	public void onInventoryOpen(InventoryOpenEvent evt) {
-		if (evt.getView().getType() == InventoryType.CHEST && evt.getInventory().getHolder() instanceof CraftChest) {
-			CraftChest cc = (CraftChest) evt.getInventory().getHolder();
+		if (evt.getView().getType() == InventoryType.CHEST && evt.getInventory().getHolder() instanceof Chest) {
+			Chest cc = (Chest) evt.getInventory().getHolder();
 			if (Po8.chestMap.containsKey(new SerializedLocation(cc.getLocation()))) {
 				int type = Po8.chestMap.get(new SerializedLocation(cc.getLocation()));
 				evt.setCancelled(true);
