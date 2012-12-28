@@ -575,6 +575,8 @@ items:
    - {active: 0, id: "351t8", max_price: 0, min_price: 0, name: "Gray Dye", stackSize: 64}
 
    - {active: 0, id: "351t9", max_price: 0, min_price: 0, name: "Pink Dye", stackSize: 64}
+   
+   - {active: 1, id: "351", max_price: 6, min_price: 1.5, name: "Ink Sac", stackSize: 64}
 
    - {active: 0, id: "373t16385", max_price: 0, min_price: 0, name: "Splash Potion of Regeneration", stackSize: 64}
 

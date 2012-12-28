@@ -87,12 +87,13 @@ public class Po8Util {
 	public static ItemStack[] splitStack(String key, int amt) {
 		MaterialData dataKey = dataKey(key);
 		ItemStack stack = new ItemStack(dataKey.getItemType(), amt, (short) 0);
-		stack.setData(new MaterialData(dataKey.getItemType(), dataKey.getData()));
+		stack.setDurability(dataKey.getData());
 		double num = stack.getAmount();
 		int size = (int) Math.ceil(num / ((double) stack.getMaxStackSize()));
 		ItemStack[] stacks = new ItemStack[size];
 		for (int i = 0; i < size; i++) {
-			ItemStack tempStack = new ItemStack(stack);
+			ItemStack tempStack = new ItemStack(dataKey.getItemType(), amt, (short) 0);
+			tempStack.setDurability(dataKey.getData());
 			tempStack.setAmount((int) Math.min(stack.getMaxStackSize(), num));
 			stacks[i] = tempStack;
 			num -= tempStack.getAmount();
